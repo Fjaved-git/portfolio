@@ -169,9 +169,7 @@
   .hero-feature-tags span { display: flex; align-items: center; gap: 6px; }
   .check-icon { color: var(--brand-blue); font-weight: 700; font-size: 0.9rem; }
 
-  /* ========================================================
-     EXACT MATCH 3D CURSOR-ROTATING GLOBE
-     ======================================================== */
+  /* 3D Cursor-Rotating Globe */
   .globe-container {
     position: relative;
     display: flex;
@@ -194,7 +192,6 @@
     display: block;
   }
 
-  /* Exact EZE Card Floating Badges */
   .globe-badge {
     position: absolute;
     background: rgba(14, 17, 23, 0.92);
@@ -223,17 +220,9 @@
     color: #ffffff;
     display: block;
   }
-  .globe-badge.badge-top {
-    top: 30px;
-    left: -20px;
-  }
-  .globe-badge.badge-bottom {
-    bottom: 35px;
-    right: -20px;
-  }
-  .globe-badge.badge-bottom span.badge-val {
-    color: var(--brand-blue);
-  }
+  .globe-badge.badge-top { top: 30px; left: -20px; }
+  .globe-badge.badge-bottom { bottom: 35px; right: -20px; }
+  .globe-badge.badge-bottom span.badge-val { color: var(--brand-blue); }
 
   /* Metric Split Section */
   .section-metrics {
@@ -255,11 +244,7 @@
     color: #fff;
   }
   .rating-num span { color: var(--brand-blue); }
-  .stat-row {
-    display: flex;
-    gap: 48px;
-    margin-top: 28px;
-  }
+  .stat-row { display: flex; gap: 48px; margin-top: 28px; }
   .stat-item h3 { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 2px; }
   .stat-item p { font-size: 0.72rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; }
 
@@ -293,6 +278,124 @@
   .strip-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
   .strip-card p { font-size: 0.86rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px; }
   .strip-meta { font-size: 0.76rem; color: var(--brand-blue); font-weight: 600; font-family: var(--mono); }
+
+  /* ========================================================
+     ANIMATED 3D LINKEDIN PROOF SECTION WITH CORRECT DRIVE LINK
+     ======================================================== */
+  .section-linkedin-proof {
+    padding: 85px 0;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .linkedin-proof-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 42px 48px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 46px;
+    align-items: center;
+    position: relative;
+  }
+  .linkedin-proof-left h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .linkedin-proof-left p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .proof-stats-grid {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+  }
+  .proof-stat-badge {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 14px 20px;
+  }
+  .proof-stat-badge strong {
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: #fff;
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .proof-stat-badge strong.blue-val { color: var(--brand-blue); }
+  .proof-stat-badge strong.green-val { color: var(--green-accent); }
+  .proof-stat-badge span {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 700;
+  }
+
+  .analytics-perspective-stage {
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .linkedin-animated-card {
+    background: #090c12;
+    border: 1px solid var(--border-active);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--brand-blue-glow);
+    cursor: zoom-in;
+    transform-style: preserve-3d;
+    transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+    animation: floatProofCard 5s ease-in-out infinite alternate;
+    position: relative;
+    max-width: 440px;
+    width: 100%;
+  }
+  @keyframes floatProofCard {
+    0% { transform: translateY(0px) rotateX(2deg) rotateY(-3deg); }
+    100% { transform: translateY(-8px) rotateX(-2deg) rotateY(3deg); }
+  }
+  .linkedin-animated-card:hover {
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), 0 0 45px rgba(0, 122, 255, 0.55);
+  }
+
+  .analytics-viewport {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+  }
+  .analytics-viewport img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .live-glow-sweep {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 40%, rgba(0, 122, 255, 0.08) 100%);
+    pointer-events: none;
+  }
+  .analytics-footer-tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 6px;
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    font-family: var(--mono);
+  }
 
   /* Projects Section */
   .section-projects {
@@ -548,7 +651,7 @@
   .support-left h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
   .support-left p { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px; }
   .support-contacts-row {
-    display: flex; gap: 28px;
+    display: flex gap: 28px;
     padding-top: 20px; border-top: 1px solid var(--border);
   }
   .contact-meta span.lbl { font-size: 0.7rem; color: var(--text-faint); text-transform: uppercase; font-weight: 700; display: block; margin-bottom: 2px; }
@@ -643,7 +746,7 @@
   }
 
   @media (max-width: 1024px) {
-    .hero-inner, .metrics-split, .about-container, .support-box { grid-template-columns: 1fr; }
+    .hero-inner, .metrics-split, .about-container, .support-box, .linkedin-proof-box { grid-template-columns: 1fr; }
     .strip-cards { grid-template-columns: 1fr; }
     .projects-grid { grid-template-columns: 1fr; }
     .channel-cards { grid-template-columns: 1fr; }
@@ -673,6 +776,7 @@
     <nav class="nav-links">
       <a href="#projects">Projects</a>
       <a href="#metrics">Track Record</a>
+      <a href="#linkedin-proof">LinkedIn Proof</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -695,6 +799,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <a href="#projects" class="mnav">Projects</a>
   <a href="#metrics" class="mnav">Track Record</a>
+  <a href="#linkedin-proof" class="mnav">LinkedIn Proof</a>
   <a href="#about" class="mnav">About</a>
   <a href="#faq" class="mnav">FAQ</a>
   <a href="#contact" class="mnav">Contact</a>
@@ -730,18 +835,15 @@
 
       <!-- EXACT MATCH 3D CURSOR-ROTATING GLOBE -->
       <div class="globe-container" id="globeContainer">
-        <!-- Floating Top Badge -->
         <div class="globe-badge badge-top" id="badgeTop">
           <span class="badge-header">Network Reach</span>
           <span class="badge-val">20K+ Impressions</span>
         </div>
 
-        <!-- 3D Canvas Stage -->
         <div class="globe-canvas-wrapper">
           <canvas id="globeCanvas" width="720" height="720"></canvas>
         </div>
 
-        <!-- Floating Bottom Badge -->
         <div class="globe-badge badge-bottom" id="badgeBottom">
           <span class="badge-header">Focus</span>
           <span class="badge-val">Flutter / iOS &amp; Android</span>
@@ -803,6 +905,72 @@
         <p>Seamless backend connectivity with REST APIs, Firebase services, and automated developer workflows.</p>
         <div class="strip-meta">APIS &amp; FIREBASE</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================
+     ANIMATED 3D PARALLAX LINKEDIN PROOF WITH EXACT DRIVE LINK
+     ======================================================== -->
+<section class="section-linkedin-proof" id="linkedin-proof">
+  <div class="wrap">
+    <div class="linkedin-proof-box">
+      <div class="linkedin-proof-left">
+        <span style="display:inline-block; font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--brand-blue); font-weight:700; margin-bottom:10px;">
+          ● Verified Creator Impact
+        </span>
+        <h2>Documenting Real Flutter Builds on LinkedIn</h2>
+        <p>
+          By sharing authentic engineering breakdowns, UI comparisons, and widget optimization workflows, my content generates verified organic traction across the tech community.
+        </p>
+
+        <div class="proof-stats-grid">
+          <div class="proof-stat-badge">
+            <strong class="blue-val">22,960</strong>
+            <span>28-Day Impressions</span>
+          </div>
+          <div class="proof-stat-badge">
+            <strong class="green-val">+387%</strong>
+            <span>Growth Velocity</span>
+          </div>
+          <div class="proof-stat-badge">
+            <strong>480+</strong>
+            <span>Active Connections</span>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://www.linkedin.com/in/fahad-javed6951/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Connect on LinkedIn →
+          </a>
+          <a href="https://www.fiverr.com/sellers/fahadjaveddev/edit" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Hire on Fiverr
+          </a>
+        </div>
+      </div>
+
+      <!-- 3D Interactive Perspective Card with Correct Google Drive Link -->
+      <div class="analytics-perspective-stage" id="proofPerspectiveStage">
+        <div class="linkedin-animated-card trigger-lightbox"
+             id="animatedProofCard"
+             data-img="https://lh3.googleusercontent.com/d/1eevs9O1VZxrsgjNbcnLLByJrAL8phmbt"
+             data-title="LinkedIn Verified Performance Dashboard (22,960 Impressions)"
+             data-drive="https://drive.google.com/file/d/1eevs9O1VZxrsgjNbcnLLByJrAL8phmbt/view?usp=sharing">
+          
+          <div class="analytics-viewport">
+            <img src="https://lh3.googleusercontent.com/d/1eevs9O1VZxrsgjNbcnLLByJrAL8phmbt"
+                 alt="LinkedIn Verified Performance Dashboard 22,960 Impressions"
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1eevs9O1VZxrsgjNbcnLLByJrAL8phmbt&sz=w1000';">
+            <div class="live-glow-sweep"></div>
+          </div>
+          
+          <div class="analytics-footer-tag">
+            <span>VERIFIED METRIC</span>
+            <span style="color:var(--brand-blue);">CLICK TO ENLARGE ↗</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1032,7 +1200,7 @@
   </div>
 </section>
 
-<!-- Community / Channel Cards -->
+<!-- Community Channels -->
 <section class="section-channels">
   <div class="wrap">
     <div style="text-align:center; max-width:600px; margin:0 auto;">
@@ -1179,6 +1347,7 @@
         <ul>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#metrics">Track Record</a></li>
+          <li><a href="#linkedin-proof">LinkedIn Proof</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
@@ -1231,44 +1400,37 @@
 
 <script>
 (function() {
-  // =========================================================================
-  // 1. EXACT SCREENSHOT-MATCHING 3D CURSOR-ROTATING DOTTED GLOBE
-  // =========================================================================
+  // 1. 3D CURSOR-ROTATING DOTTED GLOBE
   var canvas = document.getElementById('globeCanvas');
   var ctx = canvas.getContext('2d');
   var container = document.getElementById('globeContainer');
   var badgeTop = document.getElementById('badgeTop');
   var badgeBottom = document.getElementById('badgeBottom');
 
-  // Canvas resolution
   var size = 720;
   canvas.width = size;
   canvas.height = size;
   var center = size / 2;
-  var radius = 290; // sphere radius
+  var radius = 290;
 
-  // Latitude and Longitude Grid Vertices (Matches the screenshot's ring structure)
   var vertices = [];
-  var latCount = 28; // latitude rings
-  var lonCount = 42; // longitude slices
+  var latCount = 28;
+  var lonCount = 42;
 
   for (var lat = 1; lat < latCount; lat++) {
-    var theta = (lat / latCount) * Math.PI; // 0 to PI
+    var theta = (lat / latCount) * Math.PI;
     var sinTheta = Math.sin(theta);
     var cosTheta = Math.cos(theta);
 
     for (var lon = 0; lon < lonCount; lon++) {
-      var phi = (lon / lonCount) * 2 * Math.PI; // 0 to 2*PI
+      var phi = (lon / lonCount) * 2 * Math.PI;
       var x = radius * sinTheta * Math.cos(phi);
       var y = radius * cosTheta;
       var z = radius * sinTheta * Math.sin(phi);
-
-      // Check density for subtle variation
       vertices.push({ x: x, y: y, z: z });
     }
   }
 
-  // Rotation angles and physics
   var rotX = -0.15;
   var rotY = 0.5;
   var targetRotX = -0.15;
@@ -1279,7 +1441,6 @@
   var lastMouseX = 0;
   var lastMouseY = 0;
 
-  // Track Cursor Rotation & Subtle Badge Parallax
   if (container) {
     container.addEventListener('mousemove', function(e) {
       var rect = container.getBoundingClientRect();
@@ -1290,7 +1451,6 @@
       targetRotY = (mouseX / (rect.width / 2)) * 1.5;
       targetRotX = -(mouseY / (rect.height / 2)) * 0.9;
 
-      // Subtle badge parallax
       var px = (mouseX / rect.width) * 12;
       var py = (mouseY / rect.height) * 12;
       if (badgeTop) badgeTop.style.transform = 'translate(' + (-px) + 'px, ' + (-py) + 'px)';
@@ -1304,7 +1464,6 @@
       if (badgeBottom) badgeBottom.style.transform = 'translate(0, 0)';
     });
 
-    // Drag support
     container.addEventListener('mousedown', function(e) {
       isDragging = true;
       lastMouseX = e.clientX;
@@ -1328,7 +1487,6 @@
       }
     });
 
-    // Touch events for mobile
     container.addEventListener('touchmove', function(e) {
       if (e.touches.length > 0) {
         var rect = container.getBoundingClientRect();
@@ -1344,12 +1502,10 @@
   function renderGlobe() {
     ctx.clearRect(0, 0, size, size);
 
-    // Natural continuous auto-rotation
     if (!isHovered && !isDragging) {
       targetRotY += autoSpinSpeed;
     }
 
-    // Smooth Lerp Easing
     rotX += (targetRotX - rotX) * 0.065;
     rotY += (targetRotY - rotY) * 0.065;
 
@@ -1358,7 +1514,6 @@
     var cosY = Math.cos(rotY);
     var sinY = Math.sin(rotY);
 
-    // 1. Draw Globe Deep Blue Background Gradient Sphere (Matches the screenshot)
     var grad = ctx.createRadialGradient(
       center - radius * 0.35, center - radius * 0.35, radius * 0.1,
       center, center, radius
@@ -1374,33 +1529,27 @@
     ctx.fillStyle = grad;
     ctx.fill();
 
-    // Subtle Outer Rim Highlight Glow
     ctx.lineWidth = 1.8;
     ctx.strokeStyle = 'rgba(0, 122, 255, 0.35)';
     ctx.stroke();
     ctx.restore();
 
-    // 2. Project and Sort 3D Dotted Vertices
     var projected = [];
 
     for (var i = 0; i < vertices.length; i++) {
       var v = vertices[i];
 
-      // Y-axis rotation (longitude)
       var x1 = v.x * cosY - v.z * sinY;
       var z1 = v.z * cosY + v.x * sinY;
 
-      // X-axis rotation (latitude tilt)
       var y2 = v.y * cosX - z1 * sinX;
       var z2 = z1 * cosX + v.y * sinX;
 
-      // Perspective scale factor
       var cameraDist = 800;
       var scale = cameraDist / (cameraDist + z2);
       var px = center + x1 * scale;
       var py = center + y2 * scale;
 
-      // Only draw points on the front and near-edge of the sphere
       if (z2 < 40) {
         projected.push({
           x: px,
@@ -1411,29 +1560,20 @@
       }
     }
 
-    // Draw dots with dynamic lighting & depth attenuation
     for (var j = 0; j < projected.length; j++) {
       var p = projected[j];
-
-      // Distance from front of sphere: -radius is closest to viewer, 0 is equator, +radius is back
       var depthRatio = (radius - p.z) / (radius * 1.8);
       depthRatio = Math.max(0.08, Math.min(1, depthRatio));
 
-      // Dot radius
       var dotRadius = Math.max(0.8, 1.9 * p.scale);
-
-      // Color computation (Screenshot features bright cyan/blue dots near center, darker at edges)
       var alpha = depthRatio * 0.9;
       
-      // Light source vector simulation (top-left light)
       var distFromLight = Math.hypot(p.x - (center - 80), p.y - (center - 80));
       var lightIntensity = Math.max(0, 1 - distFromLight / (radius * 1.4));
 
       if (lightIntensity > 0.4) {
-        // Bright illuminated highlight points
         ctx.fillStyle = 'rgba(120, 185, 255, ' + alpha + ')';
       } else {
-        // Regular deep blue grid dots
         ctx.fillStyle = 'rgba(0, 122, 255, ' + (alpha * 0.75) + ')';
       }
 
@@ -1447,9 +1587,28 @@
 
   renderGlobe();
 
-  // =========================================================================
-  // 2. FULLSCREEN IMAGE LIGHTBOX & ZOOM LOGIC
-  // =========================================================================
+  // 2. 3D INTERACTIVE TILT ANIMATION FOR LINKEDIN CARD
+  var stage = document.getElementById('proofPerspectiveStage');
+  var card = document.getElementById('animatedProofCard');
+
+  if (stage && card) {
+    stage.addEventListener('mousemove', function(e) {
+      card.style.animation = 'none';
+      var rect = stage.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      var rotX = -(y / (rect.height / 2)) * 12;
+      var rotY = (x / (rect.width / 2)) * 14;
+      card.style.transform = 'rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) scale(1.02)';
+    });
+
+    stage.addEventListener('mouseleave', function() {
+      card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+      card.style.animation = 'floatProofCard 5s ease-in-out infinite alternate';
+    });
+  }
+
+  // 3. FULLSCREEN IMAGE LIGHTBOX & ZOOM LOGIC
   var lightbox = document.getElementById('fullscreenLightbox');
   var lightboxImg = document.getElementById('lightboxImg');
   var lightboxImgWrap = document.getElementById('lightboxImgWrap');
@@ -1513,7 +1672,7 @@
     }
   });
 
-  // Mobile Navigation Menu Toggle
+  // Mobile Navigation Toggle
   var hamburger = document.getElementById('hamburger');
   var mobileMenu = document.getElementById('mobileMenu');
   function closeMenu() {
@@ -1528,7 +1687,7 @@
     a.addEventListener('click', closeMenu);
   });
 
-  // Project Category Filtering
+  // Category Filtering
   var filterPills = document.querySelectorAll('.filter-pill');
   var projectBoxes = document.querySelectorAll('.project-box');
   filterPills.forEach(function(pill) {
@@ -1564,7 +1723,7 @@
     });
   });
 
-  // Escape key closes modals and menu
+  // Escape key closes modals
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       if (lightbox.classList.contains('open')) {
